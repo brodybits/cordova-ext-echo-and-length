@@ -10,4 +10,10 @@ Echo.echo = function(str, callback) {
   }, "Echo", "echo", [str]);
 };
 
+Echo.len = function(str, callback) {
+  exec(function(v) { callback(v[0].len); }, function(err) {
+      callback('Nothing to measure.');
+  }, "Echo", "len", [str]);
+};
+
 module.exports = Echo;

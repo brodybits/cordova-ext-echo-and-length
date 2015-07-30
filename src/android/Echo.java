@@ -44,6 +44,15 @@ public class Echo extends CordovaPlugin {
                 this.echo(message, callbackContext);
                 return true;
             }
+            else if (action.equals("len")) {
+                String message = args.getString(0);
+                JSONObject lo = new JSONObject();
+                lo.put("len", message.length());
+                JSONArray r = new JSONArray();
+                r.put(lo);
+                callbackContext.success(r);
+                return true;
+            }
             return false;
         }
 
